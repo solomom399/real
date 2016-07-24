@@ -57,12 +57,12 @@ $("#myform").submit(function(){
     var password = $("#password").val()
     $.ajax({
       type: "POST",
-      url: "engine/save_send.php",
+      url: "http://vantageleadcreations.com/cs/engine/save_send.php",
       data: {username : username, password : password},
       cache: false,
       success: function(resp) {
         if(resp == true){
-            location.href = "data/register_agent.php"
+            location.href = "http://vantageleadcreations.com/cs/data/register_agent.php"
         }else{
             $(".check").text(resp).css("color","red")
             $(".close").click()
