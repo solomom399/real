@@ -1,43 +1,3 @@
-<?php
-session_start();
-include ('../config/config.php');
-$link = $GLOBALS['config'];
-if(isset($_SESSION['promoter'])){
-$sign = $_SESSION['promoter']['surname'].' '.$_SESSION['promoter']['firstname'];
-/*if(isset($_POST['regis'])){
-   $storep = $_FILES['storep'];
-   $ids = $_FILES['ids'];
-
-   $target_dir = "store_picture/";
-    $target_file = $target_dir . basename(@$storep["name"]);
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    $str = "abcdefghijklmnopqrstuvwsyz1234567890";
-    $uni = str_shuffle($str);
-    $er = substr($uni,0,5);
-    $real = substr(@$storep["name"],0,strpos(@$storep["name"],'.'));
-    $tr = substr($real,0,0);
-    $new = $er.$tr.'.'.$imageFileType;
-
-
-    $target_dirs = "ids/";
-    $target_file = $target_dirs . basename(@$ids["name"]);
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    $str = "abcdefghstuvwsyz1234567890ijklmnopqr";
-    $uni = str_shuffle($str);
-    $er = substr($uni,0,5);
-    $real = substr(@$ids["name"],0,strpos(@$ids["name"],'.'));
-    $tr = substr($real,0,0);
-    $idss = $er.$tr.'.'.$imageFileType;
-    $sqlp = "INSERT INTO agent (storep, ids) VALUES ('$new', '$idss')";
-    if(mysqli_query($link,$sqlp)){
-        move_uploaded_file($storep["tmp_name"], $target_dir.$new);
-        move_uploaded_file($ids["tmp_name"], $target_dirs.$idss);
-        
-    }
-   
-
-}*/
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,6 +114,3 @@ $sign = $_SESSION['promoter']['surname'].' '.$_SESSION['promoter']['firstname'];
  </script>
 </body>
 </html>
-<?php
-}
-?>
