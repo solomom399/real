@@ -118,7 +118,7 @@ $("#adminform").submit(function(){
       cache: false,
       success: function(resp) {
         if(resp == true){
-            location.href = "../data/agent-details.php"
+            location.href = "http://vantageleadcreations.com/cs/data/agent-details.html"
         }else{
             $(".checkk").text(resp).css("color","red")
             $(".closed").click()
