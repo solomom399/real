@@ -62,7 +62,7 @@ $("#myform").submit(function(){
       cache: false,
       success: function(resp) {
         if(resp == true){
-            location.href = "data/register_agent.php"
+            location.href = "data/register_agent.html"
         }else{
             $(".check").text(resp).css("color","red")
             $(".close").click()
@@ -96,7 +96,7 @@ $("#myformre").submit(function(){
         if(resp == "Successful"){
             $(".su").text(resp).css("color","green")
             $(".suimg").hide()
-            location.href = "../data/register_agent.php"
+            location.href = "../data/register_agent.html"
             return true;
         }else{
             $(".su").text(resp).css("color","red")
