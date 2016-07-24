@@ -62,7 +62,7 @@ $("#myform").submit(function(){
       cache: false,
       success: function(resp) {
         if(resp == true){
-            location.href = "http://vantageleadcreations.com/cs/data/register_agent.php"
+            location.href = "data/register_agent.php"
         }else{
             $(".check").text(resp).css("color","red")
             $(".close").click()
