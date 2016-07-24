@@ -35,58 +35,8 @@
           </div>
         </nav>
 
-
-<div class="containerr">
-<?php
-include ('../config/config.php');
-$link = $GLOBALS['config'];
-$sql = "SELECT * FROM agent";
-$result = mysqli_query($link,$sql);
-echo '<table class="table table-striped">
-        <thead>
-              <tr>
-                <th>Name of store / Agent</th>
-                <th>Photo of store</th>
-                <th>Store owners name</th>
-                <th>Store owners phone number</th>
-                <th>Store owners email address</th>
-                <th>Name of contact Person</th>
-                <th>Phone number of contact Person</th>
-                <th>Email address of contact Person</th>
-                <th>IDs</th>
-                <th>Address of agents store</th>
-                <th>Landmark / Bustop</th>
-                <th>Date / time</th>
-                <th>Signature</th>
-                <th>Verify</th>
-              </tr>
-            </thead>
-            <tbody>';
-while ($row = mysqli_fetch_assoc($result)) {
-    echo '<tr>
-            <td>'.$row['nameofagent'].'</td>
-            <td><img style="width: 80px; height: 80px;" src="../store_picture/'.$row['storep'].'"></td>
-            <td>'.$row['storeownername'].'</td>
-            <td>'.$row['storeownerphone'].'</td>
-            <td>'.$row['storeowneremail'].'</td>
-            <td>'.$row['nameofcontactperson'].'</td>
-            <td>'.$row['phoneofcontactperson'].'</td>
-            <td>'.$row['emailofcontactperson'].'</td>
-            <td><img style="width: 80px; height: 80px;" src="../ids/'.$row['ids'].'"></td>
-            <td>'.$row['addressofagentsstore'].'</td>
-            <td>'.$row['landmarkbustop'].'</td>
-            <td>'.$row['datet'].'</td>
-            <td>'.$row['signature'].'</td>
-            <td><form method="POST" class="vform"><input type="hidden" value="'.$row['emailofcontactperson'].'" name="emailofcontactperson" id="emailofcontactperson"><input type="hidden" value="'.$row['storeowneremail'].'" name="storeowneremail" id="storeowneremail"><button type="submit" class="btn btn-success" name="veri">Verify</button></form></td>
-        </tr>';
-    
-}
-echo '</tbody></table>';
-
-
-
-?>
-</div>
+<button class="refresh btn btn-success pull-right"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+<iframe src="http://vantageleadcreations.com/cs/data/agent-details.php" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 <p data-toggle="modal" data-target="#my_Modal" class="run"></p><div class="modal fade " id="my_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
