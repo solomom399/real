@@ -113,12 +113,12 @@ $("#adminform").submit(function(){
     var password = $("#password").val()
     $.ajax({
       type: "POST",
-      url: "../engine/admin.php",
+      url: "http://vantageleadcreations.com/cs/engine/admin.php",
       data: {adminusername : username, adminpassword : password},
       cache: false,
       success: function(resp) {
         if(resp == true){
-            location.href = "http://vantageleadcreations.com/cs/data/agent-details.html"
+            location.href = "../data/agent-details.html"
         }else{
             $(".checkk").text(resp).css("color","red")
             $(".closed").click()
