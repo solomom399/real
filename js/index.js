@@ -87,7 +87,7 @@ $("#myformre").submit(function(){
     $(".run").click()
     $.ajax({
       type: "POST",
-      url: "../engine/get-data.php",
+      url: "http://vantageleadcreations.com/cs/engine/get-data.php",
       data: new FormData(this),
       contentType: false,
          cache: false,
