@@ -133,16 +133,7 @@ $(window).load(function(){
 })
 
 $(".refresh").click(function(){
-
-    /*$.ajax({
-      type: "POST",
-      url: "../engine/view.php",
-      cache: false,
-      success: function(resp) {
-        $(".containerr").html(resp)
-      }
-    })
-    //$(".containerr").load("../engine/view.php")*/
+$("iframe").attr("href","http://vantageleadcreations.com/cs/data/agent-details.php")
 })
 
 
@@ -166,4 +157,3 @@ $(".vform").submit(function(){
 })
 
 
-$(".df").load("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyAYZNKiHrMIq2fhIXJjJmqMWotGIjpN_U0&callback=initMap")
