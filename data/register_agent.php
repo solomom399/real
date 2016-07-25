@@ -1,0 +1,159 @@
+<?php
+session_start();
+include ('../config/config.php');
+$link = $GLOBALS['config'];
+if(isset($_SESSION['promoter'])){
+$sign = $_SESSION['promoter']['surname'].' '.$_SESSION['promoter']['firstname'];
+/*if(isset($_POST['regis'])){
+   $storep = $_FILES['storep'];
+   $ids = $_FILES['ids'];
+
+   $target_dir = "store_picture/";
+    $target_file = $target_dir . basename(@$storep["name"]);
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $str = "abcdefghijklmnopqrstuvwsyz1234567890";
+    $uni = str_shuffle($str);
+    $er = substr($uni,0,5);
+    $real = substr(@$storep["name"],0,strpos(@$storep["name"],'.'));
+    $tr = substr($real,0,0);
+    $new = $er.$tr.'.'.$imageFileType;
+
+
+    $target_dirs = "ids/";
+    $target_file = $target_dirs . basename(@$ids["name"]);
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $str = "abcdefghstuvwsyz1234567890ijklmnopqr";
+    $uni = str_shuffle($str);
+    $er = substr($uni,0,5);
+    $real = substr(@$ids["name"],0,strpos(@$ids["name"],'.'));
+    $tr = substr($real,0,0);
+    $idss = $er.$tr.'.'.$imageFileType;
+    $sqlp = "INSERT INTO agent (storep, ids) VALUES ('$new', '$idss')";
+    if(mysqli_query($link,$sqlp)){
+        move_uploaded_file($storep["tmp_name"], $target_dir.$new);
+        move_uploaded_file($ids["tmp_name"], $target_dirs.$idss);
+        
+    }
+   
+
+}*/
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+	
+    <title>CSGA</title>
+</head>
+<body>
+<div class="header">
+	<img src="../img/cs1.png">
+</div>
+
+
+<div class="col-md-2"></div>
+<div class="col-md-6 sign-up">
+      <form id="myformre" method="POST" enctype="multipart/form-data">
+        <h2 class="form-signin-heading">Register Agent</h2>
+        <div class="form-group">
+        	<label for="name-of-agent">Name of store / Agent</label><span class="req">*</span>
+        	<input type="text" id="name-of-agent" class="form-control" placeholder="Name of store / Agent" required autofocus name="nameofagent">
+        </div>
+
+        <div class="form-group">
+        	<label for="store-p">Photo of store</label>
+        	<input type="file" id="store-p" accept="image/*" class="form-control" name="storep">
+        </div>
+
+        <div class="form-group">
+        	<label for="store-owner-name">Store owners name</label><span class="req">*</span>
+        	<input type="text" id="store-owner-name" class="form-control" placeholder="Store owners name" required autofocus name="storeownername">
+        </div>
+
+        <div class="form-group">
+        	<label for="store-owner-phone">Store owners phone number</label><span class="req">*</span>
+        	<input type="text" id="store-owner-phone" class="form-control" placeholder="Store owners phone number" required autofocus name="storeownerphone">
+        </div>
+
+        <div class="form-group">
+        	<label for="store-owner-email">Store owners email address</label><span class="req">*</span>
+        	<input type="email" id="store-owner-email" class="form-control" placeholder="Store owners email address" required autofocus name="storeowneremail">
+        </div>
+
+        <div class="form-group">
+        	<label for="name-of-contact-person">Name of contact Person</label><span class="req">*</span>
+        	<input type="text" id="name-of-contact-person" class="form-control" placeholder="Name of contact Person" required autofocus name="nameofcontactperson">
+        </div>
+
+		<div class="form-group">
+        	<label for="phone-of-contact-person">Phone number of contact Person</label><span class="req">*</span>
+        	<input type="text" id="phone-of-contact-person" class="form-control" placeholder="Phone number of contact Person" required autofocus name="phoneofcontactperson">
+        </div>
+
+        <div class="form-group">
+        	<label for="email-of-contact-person">Email address of contact Person</label><span class="req">*</span>
+        	<input type="text" id="email-of-contact-person" class="form-control" placeholder="Email address of contact Person" required autofocus name="emailofcontactperson">
+        </div>
+
+        <div class="form-group">
+        	<label for="id">ID</label><span class="req">*</span>
+        	<input type="file" id="id" accept="image/*" class="form-control" name="ids">
+        </div>
+
+        <div class="form-group">
+        	<label for="address-of-agents-store">Address of agents store</label><span class="req">*</span>
+        	<textarea rows="4" id="address-of-agents-store" class="form-control" placeholder="Address of agents store" required autofocus name="addressofagentsstore"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="landmark-bustop">Landmark / Bustop</label><span class="req">*</span>
+            <input type="text" id="landmark-bustop" class="form-control" placeholder="Landmark / Bustop" required autofocus name="landmarkbustop">
+        </div>
+
+
+            <input type="hidden" name="signature" id="signature" class="form-control" value="<?php echo $sign; ?>">
+        <div class="check">
+        </div>
+
+
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"> 
+        	<button type="submit" class="btn btn-lg btn-primary btn-block" type="submit" name="regis">Register</button>
+        </div>
+        <div class="col-sm-3"></div>
+      </form>
+    </div>
+<div class="col-md-2"></div>
+<p data-toggle="modal" data-target="#my_Modal" class="run"></p><div class="modal fade " id="my_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <p class="su"></p>
+          <img class="suimg" src="../img/loading.gif">
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+ <script type="text/javascript">
+ 	
+ </script>
+</body>
+</html>
+<?php
+}
+?>
